@@ -6,32 +6,42 @@
 
 //Code here
 
-
+const me = {
+    name: `Arianna`,
+    age: 33,
+};
 
 //////////////////////////// PROBLEM 2 ////////////////////////////
 
 //Create an object saved to the variable dog.
-//The dog object should have the following properties:
+//The dog object should have the following keys:
 //name (a string), color (a string), age (a number),
 //and goodBoy/goodGirl (a boolean).
 
 //Code here
 
+const dog = {
+    name: "Yamper",
+    color: "Orange-brown",
+    age: 4,
+    goodBoy: true,
+};
 
+console.log(dog);
 
 //////////////////////////// PROBLEM 3 ////////////////////////////
 /* Print out the name of the dog you created in problem 2 using dot-notation. */
 
 //Code here
 
-
+console.log(dog.name);
 
 //////////////////////////// PROBLEM 4 ////////////////////////////
 /* Print out the color of the dog you created in problem 2 using bracket-notation. */
 
 //Code here
 
-
+console.log(dog["color"]);
 
 //////////////////////////// PROBLEM 5 ////////////////////////////
 /*
@@ -41,6 +51,16 @@
 
 //Code here
 
+const favoriteThings = {
+    band: `Paramore`,
+    food: `Ramen`,
+    person: `Thomas Keller`,
+    book: `Made In Abyss`,
+    movie: `Fox and the Hound`,
+    holiday: `Halloween`,
+};
+
+console.log(favoriteThings);
 
 /*
   After you've made your object, use bracket or dot notation to add another key named 'car' with the value being your favorite car and then another key named 'show' with the value being your favorite show.
@@ -48,6 +68,10 @@
 
 //Code here
 
+favoriteThings.car = "1997 Chevy";
+favoriteThings.show = "Avatar";
+
+console.log(favoriteThings);
 
 /*
   Now use bracket or dot notation to change the value of the food key in your favoriteThings object to be 'Chicken Nuggets'
@@ -56,81 +80,120 @@
 
 //Code here
 
+favoriteThings.food = `Chicken Nuggets`;
+favoriteThings.book = `Harry Potter`;
+console.log(favoriteThings);
 
 //////////////////////////// PROBLEM 6 ////////////////////////////
 
 // Do not edit the code below.
 var carDetails = {
-  color: 'red',
-  make: 'toyota',
-  model: 'tacoma',
-  year: 1994
-}
+    color: "red",
+    make: "toyota",
+    model: "tacoma",
+    year: 1994,
+};
 // Do not edit the code above.
 
 /*
-  Use object destructuring to save the property values from the object carDetails into new variables. 
+  Use object destructuring to save the key values from the object carDetails into new variables. 
 */
 
 //Code Here
 
+// let { make } = carDetails;
 
+let { color, make, model, year } = carDetails;
+
+console.log(color + "\n" + make);
+console.log(model);
+console.log(year);
 
 //////////////////////////// PROBLEM 7 ////////////////////////////
 
 /*
   In the function below named greeting, it is receiving an object as a parameter. 
-  Use object destructuring to save the object properties to new variables. 
-  The property names are firstName, lastName, and title.
+  Use object destructuring to save the object keys to new variables. 
+  The key names are firstName, lastName, and title.
 */
 
-function greeting( obj ) {
-  //Code Here
-  
-  // Do not edit the code below.
-  return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
-  // Do not edit the code above.
+const obj = {
+    firstName: `Arianna`,
+    lastName: `C`,
+    title: `Ms.`,
+};
+
+function greeting(obj) {
+    //Code Here
+    let = { firstName, lastName, title } = obj;
+
+    // Do not edit the code below.
+    return "Hello, " + title + " " + firstName + " " + lastName + "!";
+    // Do not edit the code above.
 }
 
-
+console.log(greeting(obj));
 
 //////////////////////////// PROBLEM 8 ////////////////////////////
 
 /*
   Write a function called totalPopulation that will take in an object.
-  That object will have 4 properties named utah, california, texas and arizona.
-  The property values will be numbers.
-  Use object destructuring to save the property values to new variables.
+  That object will have 4 keys named utah, california, texas and arizona.
+  The key values will be numbers.
+  Use object destructuring to save the key values to new variables.
   Sum up the values and return the total number.
 */
 
 //Code Here
 
+const objj = {
+    utah: 2,
+    california: 3,
+    texas: 4,
+    arizona: 5,
+};
 
+function totalPopulation(parameter) {
+    let { utah, california, texas, arizona } = parameter;
+    return utah + california + texas + arizona;
+}
 
 //////////////////////////// PROBLEM 9 ////////////////////////////
 
+console.log(totalPopulation(objj));
+
 /*
   Write a function called ingredients that will take in an object. 
-  This object will have 3 properties named carb, fat, and protein. 
-  The property values will be strings. 
-  Use object destructuring to save the property values to new variables. 
+  This object will have 3 keys named carb, fat, and protein. 
+  The key values will be strings. 
+  Use object destructuring to save the key values to new variables. 
   Push these new variables to an array and return the array. 
 */
 
 //Code Here
 
+const ingredients = {
+    carb: "pasta",
+    fat: "butter",
+    protein: "steak",
+};
 
+function ingredientsToArray(parameter) {
+    let { carb, fat, protein } = ingredients;
+    return [carb, fat, protein];
+}
+
+console.log(ingredientsToArray(ingredients));
 
 //////////////////////////// PROBLEM 10 ////////////////////////////
 // Do not edit the code below.
 var user = {
-  name: 'Bryan',
-  age: 24,
-  pwHash: 'U+Ldlngx2BYQk',
-  email: 'BryanSmith33@gmail.com',
-  birthday: '05/02/1990',
-  username: 'bryansmith33'
+    name: "Bryan",
+    age: 24,
+    pwHash: "U+Ldlngx2BYQk",
+    email: "BryanSmith33@gmail.com",
+    birthday: "05/02/1990",
+    username: "bryansmith33",
 };
 // Do not edit the code above.
 
@@ -142,6 +205,9 @@ var user = {
 
 //Code Here
 
+user.name = `Bryan G. Smith`;
+user.email = `bryan.smith@devmounta.in`;
+console.log(user);
 
 //////////////////////////// PROBLEM 11 ////////////////////////////
 /*
@@ -150,6 +216,8 @@ var user = {
 
 //Code Here
 
+delete user.age;
+console.log(user);
 
 //////////////////////////// PROBLEM 12 ////////////////////////////
 /*
@@ -160,7 +228,16 @@ var user = {
 
 //Code here
 
+class Cat {
+    constructor(name, age, color) {
+        this.name = name;
+        this.age = age;
+        this.color = color;
+    }
+}
 
+const myCat = new Cat(`AJ`, `9`, `Brown`);
+console.log(myCat);
 
 //////////////////////////// PROBLEM 13 ////////////////////////////
 /*
@@ -177,7 +254,7 @@ var user = {
     Write a class called Phone. We'll use it as if we were creating
     phone objects to keep track of inventory using an app.
 
-    Phone will build phone objects with brand, model, storage, color, price, and sold properties.
+    Phone will build phone objects with brand, model, storage, color, price, and sold keys.
 
     Write a constructor that sets those values -- all of the values 
     should come from the constructors parameters except sold, which
@@ -197,7 +274,6 @@ var user = {
 
 //Code Here
 
-  
 /*
     Next make three new phone instances using your class.
     Send in values of your choice. They should match these data types:
@@ -215,19 +291,17 @@ var user = {
   don't forget to pass in a new price 
 
   Then console.log that object to see the price change
-*/ 
+*/
 
-//Code Here 
-
+//Code Here
 
 /*
   Now call the sell method on one of your other phone objects
 
-  Print the value of that phone's sell property to make sure it's been changed to true
+  Print the value of that phone's sell key to make sure it's been changed to true
 */
 
-//Code Here 
-
+//Code Here
 
 //////////////////////////// PROBLEM 15 ////////////////////////////
 
@@ -239,45 +313,41 @@ var user = {
 
 //do not edit this object
 const colors = {
-  background: 'red',
-  highlight: 'blue',
-  text: 'yellow'
-}
+    background: "red",
+    highlight: "blue",
+    text: "yellow",
+};
 //do not edit this object
 
-//Code Here 
-
-
+//Code Here
 
 /*
  Now use the spread operator to combine the following 2 objects into one. 
  Call the new variable helensInfo. 
- When they combine, none of the properties should be repeated.
+ When they combine, none of the keys should be repeated.
 */
 
 //do not edit the objects below
 const contactInfo = {
-  firstName: 'Helen',
-  lastName: 'Parr',
-  phoneNumber: 1234445555,
-  email: 'helen@mymail.com',
-}
+    firstName: "Helen",
+    lastName: "Parr",
+    phoneNumber: 1234445555,
+    email: "helen@mymail.com",
+};
 
 const shippingInfo = {
-  firstName: 'Helen',
-  lastName: 'Parr',
-  street: '100 E. Main Street',
-  city: 'Anytown',
-  state: 'AZ',
-  zipCode: 85004,
-}
+    firstName: "Helen",
+    lastName: "Parr",
+    street: "100 E. Main Street",
+    city: "Anytown",
+    state: "AZ",
+    zipCode: 85004,
+};
 //do not edit the objects above
 
 //Code Here
 
-
-//Print helensInfo to see what it looks like, there should be no repeating properties.
-
+//Print helensInfo to see what it looks like, there should be no repeating keys.
 
 //////////////////////////// PROBLEM 16 ////////////////////////////
 
@@ -291,15 +361,13 @@ const shippingInfo = {
   And finally, print the value of the mileage.
 */
 
-//Code Here 
-
+//Code Here
 
 /*
   Create a vehicle using your new class and save it to a variable called myFirstVehicle
 */
 
 //Code Here
-
 
 /* 
   Now we'll create a class that's based off of the vehicle class. 
@@ -315,7 +383,7 @@ const shippingInfo = {
   Create a Motorcycle using your new class and save it to a variable called myFirstMotorcycle
 */
 
-//Code Here 
+//Code Here
 
 /*
   Call the move function on myFirstMotorcycle (don't forget the parameter)
@@ -339,10 +407,9 @@ const shippingInfo = {
 
 //Code Here
 
-
 /*
   Create a new boat using your class. You can choose whatever values you like for all the 
-  properties except isSeaworthy -- make that one false. Call your variable myFirstBoat.
+  keys except isSeaworthy -- make that one false. Call your variable myFirstBoat.
 */
 
 //Code Here
@@ -357,7 +424,7 @@ const shippingInfo = {
   Now run the performMaintenance method on your boat
 */
 
-//Code Here 
+//Code Here
 
 /*
   Check the seaworthiness once more (you should be ready for the water!)
